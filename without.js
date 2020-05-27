@@ -45,11 +45,11 @@ const without = function (array, values) {
       newArray.push(array[i]);
     }
   }
-return newArray;
-}
+  return newArray;
+};
 
 console.log(without([1, 2, 3], [1]))
 console.log(without(["1", "2", "3"], [1, 2, "3"]))
 console.log(without(["1", "2", "3"], ["1", "2", "3"]))
 console.log(without(["hello", "world", "lighthouse"], ["lighthouse"]))
-console.log(without([1,2,3,4,5,6], [6,4,2]))
+console.log(without([1, 2, 3, 4, 5, 6], [6, 4, 2]))
