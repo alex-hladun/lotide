@@ -7,15 +7,6 @@ const assertEqual = function (actual, expected) {
   // console.assert(actual === expected,"🛑🛑🛑" + actual + " !== " + expected);
 };
 
-const eqArrays = function (actual, expected) {
-  for (let i = 0; i <= expected.length - 1; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length === Object.keys(object2).length) {
     for (let key in object1) {
@@ -28,6 +19,10 @@ const eqObjects = function(object1, object2) {
             return false;
           }
         }
+      } else if (object1[key].constructor === Object && object2[key].constructor === Object) {
+        if (!eqObjects(object1[key], object2[key])) {
+          return false;
+        }
       } else if (object1[key] !== object2[key]) {
         return false;
       }
@@ -38,6 +33,11 @@ const eqObjects = function(object1, object2) {
   }
 
 };
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: {p: [3 , 5, 6], l: {3: 6}, b: {hello: 8, anotherArray: [6, 7, 8]}}}, { a: {p: [3 , 5, 6], l: {3: 6}, b: {hello: 8, anotherArray: [6, 7, 8]}}}), true);
 
 const ab = {a: "1", b: "2"};
 const ba = {b: "2", a: "1"};
