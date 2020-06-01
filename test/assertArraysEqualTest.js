@@ -1,13 +1,11 @@
+const assert = require('chai').assert;
 const assertArraysEqual = require('../assertArraysEqual');
-const assertEqual = require('../assertEqual');
-const middle = require('../middle');
 
-assertEqual(assertArraysEqual([4, 3, 2], [3, 2, 3]), false);
-assertEqual(assertArraysEqual([4, 3, 2], [4, 3, 2]), true);
-
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([6, 9]), []);
-assertArraysEqual(middle([]), []);
-assertArraysEqual(middle([1]), []);
+describe("#assertArraysEqual", () => {
+  it("Should return false when given un-equal arrays", () => {
+    assert.strictEqual(assertArraysEqual([4, 3, 2], [3, 2, 3]), false);
+  });
+  it("Should return true for 2 equal arrays", () => {
+    assert.strictEqual(assertArraysEqual([4, 3, 2], [4, 3, 2]), true);
+  });
+});
