@@ -30,3 +30,4 @@ const eqArrays = function(actual, expected) {
   }
 };
 
+module.exports = assertArraysEqual;

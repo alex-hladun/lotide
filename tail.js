@@ -14,6 +14,8 @@ const tail = function(array) {
   }
 };
 
+module.exports = tail; 
+
 // Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 console.log(tail(words));
