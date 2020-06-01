@@ -7,8 +7,4 @@ const assertEqual = function(actual, expected) {
   // console.assert(actual === expected,"🛑🛑🛑" + actual + " !== " + expected);
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("wth", "wth");
-
-assertEqual(2,2)
+module.exports = assertEqual;
