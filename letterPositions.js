@@ -15,4 +15,4 @@ const letterPositions = function(sentence) {
 
 module.exports = letterPositions;
 
-letterPositions("lighthouse in the house");
+// letterPositions("lighthouse in the house");

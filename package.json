@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@ahladun/lotide",
   "version": "1.0.0",
   "description": "A mini clone of the lodash (lodash.com) library.",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/alex-hladun/lotide.git"
   },
-  "author": "@ahladun/lotide",
+  "author": "@ahladun",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alex-hladun/lotide/issues"
